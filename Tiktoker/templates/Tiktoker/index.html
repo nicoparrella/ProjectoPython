@@ -1,0 +1,25 @@
+{% extends 'home/index.html' %}
+
+{% block titulo %}
+<title>Tiktoker</title>
+{% endblock titulo %}
+
+{% block tittle %}
+
+    <h1>Listado de Tiktoker </h1>
+    
+{% endblock tittle %}
+
+{% block content-left %}
+    <ul class="list-group">
+        {% for Tiktoker in Tiktoker %}
+        <li class="list-group-item list-group-item-info"> {{Tiktoker.nombre}}  {{Tiktoker.apellido}}</li>
+    {% endfor %}
+
+    </ul>
+    
+{% endblock content-left %}
+
+{% block content-right %}
+    <a href="{% url 'Tiktoker:crear' %}">Agregar Tiktoker</a>
+{% endblock content-right %}

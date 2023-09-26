@@ -1,0 +1,25 @@
+{% extends 'home/index.html' %}
+
+{% block titulo %}
+<title>Streamers</title>
+{% endblock titulo %}
+
+{% block tittle %}
+
+    <h1>Listado de Streamers </h1>
+    
+{% endblock tittle %}
+
+{% block content-left %}
+    <ul class="list-group">
+        {% for Streamers in Streamers %}
+        <li class="list-group-item list-group-item-info"> {{Streamers.nombre}}  {{Streamers.apellido}}</li>
+    {% endfor %}
+
+    </ul>
+    
+{% endblock content-left %}
+
+{% block content-right %}
+    <a href="{% url 'Streamers:crear' %}">Agregar Streamers</a>
+{% endblock content-right %}
