@@ -27,6 +27,16 @@
             <li><a href="{% url 'Tiktoker:index' %}" class="nav-link px-2">Tiktoker</a></li>
             <li><a href="/about" class="nav-link px-2">About</a></li>
           </ul>
+
+          <div class="col-md-3 text-end">
+            {% if user.is_authenticated %}
+              <button type="button" class="btn btn-danger"><a href="{% url 'home:logout' %}" class="nav-link px-2">Salir</a></button>
+            {% else %}
+              <button type="button" class="btn btn-outline-primary me-2"><a href="{% url 'home:login' %}" class="nav-link px-2">Login</a></button>
+              <button type="button" class="btn btn-primary"><a href="{% url 'home:register' %}" class="nav-link px-2">Registrarse</a></button>
+            {% endif %}
+           
+          </div>
      
     {% endblock nav %}
     
